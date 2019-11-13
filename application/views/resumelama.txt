@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Lihat Surat Izin</title>
+  <?php $this->load->view("partials/head.php") ?>
+</head>
+<body>
+
+<div id="wrapper">
+    <?php $this->load->view("partials/sidebar.php") ?>
+<div id="page-wrapper">
+    <div class="row">
+        <div class="col-lg-12">
+            <h2 class="page-header">Hasil Harga berdasarkan Fuzzy Sugeno</h2>
+        </div>
+        <!-- /.col-lg-12 -->
+    </div>
+
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            Table Data
+        </div>
+        <div class="panel-body">
+            <div class="row">
+                <div id="wrapper">
+                <div id="content-wrapper">
+                    <div class="container-fluid">
+                        <div class="table-responsive"><br>
+                            <table width="60%" class="table table-hover table-bordered table-hover" id="dataTables-example">
+                                <thead>
+                                    <tr class="info">
+                                        <th style="text-align:center">Merek Mobil</th>
+                                        <th style="text-align:center">Tahun</th>
+                                        <th style="text-align:center">Odometer</th>
+                                        <th style="text-align:center">Harga Beli</th>
+                                        <th style="text-align:center">Kondisi Fisik</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <?php //foreach ($mobil as $mbl): ?>
+                                        <tr>
+                                            <td width="400">
+                                                <?php echo $mbl->merek ?>
+                                            </td>
+                                            <td width="100" style="text-align:center;">
+                                                <?php echo $mbl->tahun?>
+                                            </td>
+                                            <td width="200">
+                                                <?php echo $mbl->jarak?> km
+                                            </td>
+                                            <td width="220">
+                                                Rp.<?php echo $mbl->hrgbeli?>
+                                            </td>
+                                            <td width="50" style="text-align:center;">
+                                                <?php echo $mbl->kfisik?>%
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                        </tr>
+                                    <?php //endforeach; ?>
+                                </tbody>
+                            </table>
+                            <!-- /.table-responsive-->
+                            <table width="60%" class="table table-hover table-bordered table-hover" id="dataTables-example">
+                                <!-- <thead> -->
+                                    <tr class="info">
+                                        <th style="text-align:center">Harga Jual</th>
+                                    </tr>
+                                <!-- </thead> -->
+                                <!-- <tbody> -->
+                                    <?php //foreach ($mobil as $mbl): ?>
+                                        <tr>                                            
+                                            <td width="220" style="text-align:justify">
+                                                <?php echo $mbl->harga_jual?>
+                                            </td>
+                                        </tr>
+                                    <?php //endforeach; ?>
+                                <!-- </tbody> -->
+                            </table>
+                        </div>
+                        <!-- /.container-fluid-->
+                    </div>
+                </div>
+                </div>
+            </div>
+        </div>
+    </div>           
+</div>
+
+</div>
+<div>
+    <?php $this->load->view("partials/footer.php") ?>
+</div>
+
+<!-- /#wrapper -->
+
+<!-- Morris Charts JavaScript -->
+<script type="text/javascript" src="<?php echo base_url(); ?>assets/vendor/raphael/raphael.min.js"></script>
+<script type="text/javascript" src="<?php echo base_url(); ?>assets/vendor/morrisjs/morris.min.js"></script>
+<script type="text/javascript" src="<?php echo base_url(); ?>assets/data/morris-data.js"></script>
+
+<!-- Custom Theme JavaScript -->
+<script type="text/javascript" src="<?php echo base_url(); ?>assets/dist/js/sb-admin-2.js"></script>
+
+<!-- jQuery -->
+<script src="../vendor/jquery/jquery.min.js"></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="../vendor/bootstrap/js/bootstrap.min.js"></script>
+
+<!-- Metis Menu Plugin JavaScript -->
+<script src="../vendor/metisMenu/metisMenu.min.js"></script>
+
+<!-- DataTables JavaScript -->
+<script src="../vendor/datatables/js/jquery.dataTables.min.js"></script>
+<script src="../vendor/datatables-plugins/dataTables.bootstrap.min.js"></script>
+<script src="../vendor/datatables-responsive/dataTables.responsive.js"></script>
+
+<!-- Custom Theme JavaScript -->
+<script src="../dist/js/sb-admin-2.js"></script>
+
+<!-- Page-Level Demo Scripts - Tables - Use for reference -->
+<script>
+$(document).ready(function() {
+    $('#dataTables-example').DataTable({
+        responsive: true
+    });
+});
+</script>
+
+<!-- < ?php $this->load->view("admin/_partials/scrolltop.php") ?> -->
+<?php $this->load->view("partials/modal.php") ?>
+
+<?php $this->load->view("partials/js.php") ?>
+
+<script>
+function deleteConfirm(url){
+    $('#btn-delete').attr('href', url);
+    $('#deleteModal').modal();
+}
+</script>
+
+
+</body>
+
+</html>
+            

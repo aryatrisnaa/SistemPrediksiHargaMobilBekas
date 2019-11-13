@@ -1,0 +1,74 @@
+if($predikat_tahun>0)
+                {
+                    if($predikat_jarak!=0 && $predikat_fisik!=0){
+                        if(($predikat_tahun<=$predikat_jarak) && ($predikat_tahun<=$predikat_fisik)){
+                            $alpha = $predikat_tahun;
+                        }   
+                    }
+                    else if($predikat_jarak==0 && $predikat_fisik!=0){
+                        if($predikat_tahun<=$predikat_fisik){
+                            $alpha = $predikat_tahun;
+                        }else{
+                            $alpha= $predikat_fisik;
+                        }
+                    }else if($predikat_jarak!=0 && $predikat_fisik==0){
+                        if($predikat_tahun<=$predikat_jarak){
+                            $alpha = $predikat_tahun;
+                        }else{
+                            $alpha = $predikat_jarak;   
+                        }
+                    }else{
+                        $alpha = $predikat_tahun;
+                    }
+
+                }else if($predikat_jarak>0)
+                {
+                    if($predikat_tahun!=0 && $predikat_fisik!=0){
+                        if(($predikat_jarak<=$predikat_tahun) && ($predikat_jarak<=$predikat_fisik)){
+                            $alpha = $predikat_jarak;
+                        }   
+                    }
+                    else if($predikat_tahun==0 && $predikat_fisik!=0){
+                        if($predikat_jarak<=$predikat_fisik){
+                            $alpha = $predikat_jarak;
+                        }else{
+                            $alpha = $predikat_fisik;   
+                        }
+                    }else if($predikat_tahun!=0 && $predikat_fisik==0){
+                        if($predikat_jarak<=$predikat_tahun){
+                            $alpha = $predikat_jarak;
+                        }else{
+                            $alpha = $predikat_tahun;   
+                        }
+                    }else{
+                        $alpha = $predikat_jarak;
+                    }
+
+                }else if($predikat_fisik>0){
+                    if(($predikat_fisik<=$predikat_jarak) && ($predikat_fisik<=$predikat_tahun)){
+                        $alpha = $predikat_fisik;
+                    }
+                    if($predikat_tahun!=0 && $predikat_jarak!=0){
+                        if(($predikat_fisik<=$predikat_jarak) && ($predikat_fisik<=$predikat_tahun)){
+                            $alpha = $predikat_fisik;
+                        }   
+                    }
+                    else if($predikat_tahun==0 && $predikat_jarak!=0){
+                        if($predikat_fisik<=$predikat_jarak){
+                            $alpha = $predikat_fisik;
+                        }else{
+                            $alpha = $predikat_jarak;   
+                        }
+                    }else if($predikat_tahun==0 && $predikat_jarak!=0){
+                        if($predikat_fisik<=$predikat_tahun){
+                            $alpha = $predikat_fisik;
+                        }else{
+                            $alpha = $predikat_tahun;   
+                        }
+                    }else{
+                        $alpha = $predikat_fisik;
+                    }
+
+                }else{
+                    $alpha = 0; 
+                }
